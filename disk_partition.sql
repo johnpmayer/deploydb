@@ -16,6 +16,7 @@ create table deployapp.disk_partition (
 ,	foreign key (disk_id) references deployapp.disk (id)
 ,	unique (disk_id, partition_number)
 ,	unique (disk_id, partition_type)
+,	unique (disk_id, mount_point)
 ,	check (size_in_mb > 0)
 ,	foreign key (disk_id, chain_partition_number, chain_partition_type) references deployapp.disk_partition
 
